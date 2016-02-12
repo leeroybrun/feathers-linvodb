@@ -12,8 +12,16 @@
 npm install linvodb3 feathers-linvodb --save
 ```
 
+You need to install either LevelDown (for pure node.js, using LevelDB), or medeadown (for NW.js/Electron, JS-only backend) :
+
+```bash
+npm install medeadown # For NW.js, using Medea
+npm install leveldown # For pure node.js, using LevelDB
+```
 
 ## Documentation
+
+Please refer to the [LinvoDB documentation](https://github.com/Ivshti/linvodb3) for more informations about it.
 
 Please refer to the [Feathers database adapter documentation](http://docs.feathersjs.com/databases/readme.html) for more details or directly at:
 
