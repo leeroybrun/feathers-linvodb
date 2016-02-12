@@ -9,11 +9,11 @@ import { nfcall, getSelect, multiOptions } from './utils';
 class Service {
 	constructor(options) {
 		if (!options) {
-		  throw new Error('NeDB options have to be provided');
+		  throw new Error('LinvoDB options have to be provided');
 		}
 
 		if (!options.Model) {
-			throw new Error('NeDB datastore `Model` needs to be provided');
+			throw new Error('LinvoDB datastore `Model` needs to be provided');
 		}
 
 		this.Model = options.Model;

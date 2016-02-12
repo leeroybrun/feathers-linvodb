@@ -5,7 +5,7 @@ import path from 'path';
 import fs from 'fs';
 import assert from 'assert';
 import feathers from 'feathers';
-import NeDB from 'nedb';
+import LinvoDB from 'nedb';
 import { base, example } from 'feathers-service-tests';
 import errors from 'feathers-errors';
 
@@ -17,8 +17,9 @@ import service from '../src';
 // same order they have been created so this counter is used for sorting instead.
 let counter = 0;
 
-const filename = path.join('db-data', 'people');
-const db = new NeDB({ filename, autoload: true });
+const filename = path.join(process.cwd(), 'db-data', 'people');
+LinvoDB.dbPath = filename;
+const db = new LinvoDB('people', {});
 const nedbService = service({ Model: db }).extend({
   _find(params) {
     params.query = params.query || {};
@@ -39,7 +40,7 @@ const people = app.service('people');
 
 let _ids = {};
 
-describe('NeDB Service', function() {
+describe('LinvoDB Service', function() {
   var clean = done => fs.unlink(filename, () => done());
 
   before(clean);
@@ -48,13 +49,13 @@ describe('NeDB Service', function() {
   describe('Initialization', () => {
     describe('when missing options', () => {
       it('throws an error', () => {
-        expect(service.bind(null)).to.throw('NeDB options have to be provided');
+        expect(service.bind(null)).to.throw('LinvoDB options have to be provided');
       });
     });
 
     describe('when missing a Model', () => {
       it('throws an error', () => {
-        expect(service.bind(null, {})).to.throw('NeDB datastore `Model` needs to be provided');
+        expect(service.bind(null, {})).to.throw('LinvoDB datastore `Model` needs to be provided');
       });
     });
 
@@ -96,7 +97,7 @@ describe('NeDB Service', function() {
   });
 });
 
-describe('NeDB service example test', () => {
+describe('LinvoDB service example test', () => {
   after(done => server.close(() => done()));
 
   example('_id');

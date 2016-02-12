@@ -4,6 +4,8 @@ import rest from 'feathers-rest';
 import bodyParser from 'body-parser';
 import linvodbService from '../lib';
 
+LinvoDB.dbPath = process.cwd() +'/db/';
+
 const db = new LinvoDB('todo', {});
 
 // NeDB ids do not seem to be generated sequentially but sorted lexigraphically
