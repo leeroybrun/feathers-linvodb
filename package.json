@@ -8,7 +8,7 @@
     "url": "https://github.com/leeroybrun/feathers-linvodb.git"
   },
   "bugs": {
-    "url": "https://github.com/leeroybrun/feathers-linvodbne/issues"
+    "url": "https://github.com/leeroybrun/feathers-linvodb/issues"
   },
   "license": "MIT",
   "keywords": [
@@ -18,13 +18,15 @@
     "Socket.io",
     "realtime",
     "linvodb",
+    "linvodb3",
     "service"
   ],
   "author": "Feathers <hello@feathersjs.com> (http://feathersjs.com)",
   "contributors": [
     "Marshall Thompson <marshall@creativeideal.net> (https://github.com/marshallswain)",
     "Eric Kryski <e.kryski@gmail.com> (http://erickryski.com)",
-    "David Luecke <daff@neyeon.de> (http://neyeon.com)"
+    "David Luecke <daff@neyeon.de> (http://neyeon.com)",
+    "Leeroy Brun <leeroy.brun@gmail.com> (http://www.leeroy.me)"
   ],
   "main": "lib/",
   "scripts": {
