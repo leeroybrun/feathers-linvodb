@@ -2,13 +2,13 @@
   "name": "feathers-linvodb",
   "description": "Feathers LinvoDB Service",
   "version": "2.1.0",
-  "homepage": "https://github.com/feathersjs/feathers-linvodb",
+  "homepage": "https://github.com/leeroybrun/feathers-linvodb",
   "repository": {
     "type": "git",
-    "url": "https://github.com/feathersjs/feathers-linvodb.git"
+    "url": "https://github.com/leeroybrun/feathers-linvodb.git"
   },
   "bugs": {
-    "url": "https://github.com/feathersjs/feathers-linvodbne/issues"
+    "url": "https://github.com/leeroybrun/feathers-linvodbne/issues"
   },
   "license": "MIT",
   "keywords": [
