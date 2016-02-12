@@ -1,14 +1,14 @@
 {
-  "name": "feathers-nedb",
-  "description": "Feathers NeDB Service",
+  "name": "feathers-linvodb",
+  "description": "Feathers LinvoDB Service",
   "version": "2.1.0",
-  "homepage": "https://github.com/feathersjs/feathers-nedb",
+  "homepage": "https://github.com/feathersjs/feathers-linvodb",
   "repository": {
     "type": "git",
-    "url": "https://github.com/feathersjs/feathers-nedb.git"
+    "url": "https://github.com/feathersjs/feathers-linvodb.git"
   },
   "bugs": {
-    "url": "https://github.com/feathersjs/feathers-nedb/issues"
+    "url": "https://github.com/feathersjs/feathers-linvodbne/issues"
   },
   "license": "MIT",
   "keywords": [
@@ -17,7 +17,7 @@
     "REST",
     "Socket.io",
     "realtime",
-    "nedb",
+    "linvodb",
     "service"
   ],
   "author": "Feathers <hello@feathersjs.com> (http://feathersjs.com)",
