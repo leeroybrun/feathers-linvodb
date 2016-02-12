@@ -1,20 +1,17 @@
-import NeDB from 'nedb';
+import LinvoDB from 'nedb';
 import feathers from 'feathers';
 import rest from 'feathers-rest';
 import bodyParser from 'body-parser';
-import service from '../lib';
+import linvodbService from '../lib';
 
-const db = new NeDB({
-  filename: './db-data/todos',
-  autoload: true
-});
+const db = new LinvoDB('todo', {});
 
 // NeDB ids do not seem to be generated sequentially but sorted lexigraphically
 // if no other sort order is given. This means that items can not be returned in the
 // same order they have been created so this counter is used for sorting instead.
 let counter = 0;
 
-const todoService = service({
+const todoService = linvodbService({
   Model: db,
   paginate: {
     default: 2,
@@ -56,4 +53,4 @@ app.use(function(error, req, res, next){
 // Start the server
 module.exports = app.listen(3030);
 
-console.log('Feathers Todo NeDB service running on 127.0.0.1:3030');
+console.log('Feathers Todo LinvoDB service running on 127.0.0.1:3030');

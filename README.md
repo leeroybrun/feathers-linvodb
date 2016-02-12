@@ -1,15 +1,15 @@
-# feathers-nedb
+# feathers-linvodb
 
-[![Build Status](https://travis-ci.org/feathersjs/feathers-nedb.png?branch=master)](https://travis-ci.org/feathersjs/feathers-nedb)
-[![Code Climate](https://codeclimate.com/github/feathersjs/feathers-nedb.png)](https://codeclimate.com/github/feathersjs/feathers-nedb)
+[![Build Status](https://travis-ci.org/leeroybrun/feathers-linvodb.png?branch=master)](https://travis-ci.org/feathersjs/feathers-linvodb)
+[![Code Climate](https://codeclimate.com/github/leeroybrun/feathers-linvodb.png)](https://codeclimate.com/github/feathersjs/feathers-linvodb)
 
-> Create an [NeDB](https://github.com/louischatriot/nedb) Service for [FeatherJS](https://github.com/feathersjs).
+> Create an [LinvoDB](https://github.com/Ivshti/linvodb3) Service for [FeatherJS](https://github.com/feathersjs).
 
 
 ## Installation
 
 ```bash
-npm install nedb feathers-nedb --save
+npm install linvodb3 feathers-linvodb --save
 ```
 
 
@@ -25,18 +25,16 @@ Please refer to the [Feathers database adapter documentation](http://docs.feathe
 
 ## Complete Example
 
-Here's an example of a Feathers server with a `todos` nedb-service.
+Here's an example of a Feathers server with a `todos` linvodb-service.
 
 ```js
-import NeDB from 'nedb';
-import feathers from 'feathers';
-import bodyParser from 'body-parser';
-import service from '../lib';
+const feathers = require('feathers');
+const rest = require('feathers-rest');
+const LinvoDB = require('linvodb3');
+const linvodbService = require('feathers-linvodb');
+const bodyParser = require('body-parser');
 
-const db = new NeDB({
-  filename: './db-data/todos',
-  autoload: true
-});
+const db = new LinvoDB('todo', {});
 
 // Create a feathers instance.
 var app = feathers()
@@ -48,7 +46,7 @@ var app = feathers()
   .use(bodyParser.urlencoded({extended: true}));
 
 // Connect to the db, create and register a Feathers service.
-app.use('todos', service({
+app.use('todos', linvodbService({
   Model: db,
   paginate: {
     default: 2,
